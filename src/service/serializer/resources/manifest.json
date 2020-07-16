@@ -1,0 +1,4 @@
+{
+  "bundle.symbolic_name" : "serializerservice",
+  "bundle.activator" : true
+}
