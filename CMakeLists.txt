@@ -1,13 +1,14 @@
 # [proj-begin]
 project(CppMicroService)
 cmake_minimum_required(VERSION 3.16)
+set (CMAKE_CXX_STANDARD 20)
 
 find_package(CppMicroServices REQUIRED)
 # [proj-end]
 
 include(GenerateExportHeader)
 
-function(GenerateService _name _package)
+function(GenerateService _name _args)
     set(_srcs ${ARGN})
 
     usFunctionGetResourceSource(TARGET ${_name} OUT _srcs)
@@ -20,18 +21,19 @@ function(GenerateService _name _package)
     if(${_name}_DEPENDS)
         foreach(_dep ${${_name}_DEPENDS})
             include_directories(${PROJECT_SOURCE_DIR}/${_dep})
-            target_link_libraries(${_name} Tutorial-${_dep})
+            target_link_libraries(${_name} ${_dep})
         endforeach()
     endif()
     target_link_libraries(${_name} ${CppMicroServices_LIBRARIES})
     set_target_properties(${_name} PROPERTIES
-            LABELS Tutorial
             OUTPUT_NAME ${_name}
             )
 
-    usFunctionAddResources(TARGET ${_name} BUNDLE_NAME ${_name} WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/src/service/${_package}/resources FILES manifest.json)
+    usFunctionAddResources(TARGET ${_name} BUNDLE_NAME ${_name} WORKING_DIRECTORY ../resources FILES manifest.json)
     usFunctionEmbedResources(TARGET ${_name})
 
 endfunction()
 
-add_subdirectory(src)
+add_subdirectory(driver)
+add_subdirectory(mms)
+
