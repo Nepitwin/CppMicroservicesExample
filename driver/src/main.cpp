@@ -159,5 +159,5 @@ int main(int /*argc*/, char ** /*argv*/) {
 
 #ifndef US_BUILD_SHARED_LIBS
 CPPMICROSERVICES_INITIALIZE_STATIC_BUNDLE(system_bundle)
-CPPMICROSERVICES_IMPORT_BUNDLE(serializerservice)
+CPPMICROSERVICES_IMPORT_BUNDLE(mms_service)
 #endif
