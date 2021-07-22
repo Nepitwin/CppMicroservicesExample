@@ -160,4 +160,6 @@ int main(int /*argc*/, char ** /*argv*/) {
 #ifndef US_BUILD_SHARED_LIBS
 CPPMICROSERVICES_INITIALIZE_STATIC_BUNDLE(system_bundle)
 CPPMICROSERVICES_IMPORT_BUNDLE(mms_service)
+CPPMICROSERVICES_IMPORT_BUNDLE(clock_service)
+CPPMICROSERVICES_IMPORT_BUNDLE(clock_consumer_service)
 #endif

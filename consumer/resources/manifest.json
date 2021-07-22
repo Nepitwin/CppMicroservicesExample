@@ -1,0 +1,6 @@
+{
+  "bundle.symbolic_name" : "clock_consumer_service",
+  "bundle.activator" : true,
+  "bundle.name" : "Example Consumer Service",
+  "bundle.description" : "This bundle calls the clock service to get the current time."
+}

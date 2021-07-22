@@ -1,0 +1,6 @@
+{
+  "bundle.symbolic_name" : "clock_service",
+  "bundle.activator" : true,
+  "bundle.name" : "Simple clock service",
+  "bundle.description" : "This bundle handles the clock."
+}

@@ -36,4 +36,5 @@ endfunction()
 
 add_subdirectory(driver)
 add_subdirectory(mms)
-
+add_subdirectory(clock)
+add_subdirectory(consumer)
