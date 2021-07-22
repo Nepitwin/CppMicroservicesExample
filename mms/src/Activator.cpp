@@ -27,11 +27,11 @@ public:
                 }
 
                 switch (status) {
-                    case FileStatus::created:
-                        std::cout << "File created: " << file << '\n';
+                    case FileStatus::load:
+                        std::cout << "File load: " << file << '\n';
                         break;
-                    case FileStatus::modified:
-                        std::cout << "File modified: " << file << '\n';
+                    case FileStatus::updated:
+                        std::cout << "File updated: " << file << '\n';
                         break;
                     case FileStatus::erased:
                         std::cout << "File erased: " << file << '\n';
