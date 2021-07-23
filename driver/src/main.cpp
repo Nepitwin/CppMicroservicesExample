@@ -45,10 +45,7 @@ int main(int /*argc*/, char ** /*argv*/) {
 
     std::cout << "> ";
     while (std::cin.getline(cmd, sizeof(cmd))) {
-        /*
-         The user can stop the framework and we handle this like
-         a regular shutdown command.
-        */
+
         if (framework.GetState() != cppmicroservices::Bundle::STATE_ACTIVE) {
             break;
         }

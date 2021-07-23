@@ -1,10 +1,8 @@
 #include <cppmicroservices/BundleActivator.h>
 #include <cppmicroservices/GetBundleContext.h>
-
 #include <iostream>
 #include <thread>
-
-#include "ServiceTime.h"
+#include <IServiceTime.h>
 
 using namespace ::std::literals;
 
@@ -16,7 +14,7 @@ public:
         std::cout << "Start consumer service" << '\n';
         ctx = context;
 
-        interruptable = std::jthread([this](std::stop_token stopToken) {
+        consumer = std::jthread([this](std::stop_token stopToken) {
             while (!stopToken.stop_requested()) {
                 std::this_thread::sleep_for(1s);
                 auto ref = ctx.GetServiceReference<IServiceTime>();
@@ -26,8 +24,7 @@ public:
     }
 
     void Stop(cppmicroservices::BundleContext context) override {
-        // NOTE: The mms is automatically unregistered
-        interruptable.request_stop();
+        consumer.request_stop();
         std::cout << "End consumer service" << std::endl;
     }
 
@@ -52,10 +49,9 @@ public:
     }
 
 private:
-    std::jthread interruptable;
+    std::jthread consumer;
 
     cppmicroservices::BundleContext ctx;
-
 };
 
 CPPMICROSERVICES_EXPORT_BUNDLE_ACTIVATOR(ConsumerActivator)

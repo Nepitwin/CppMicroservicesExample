@@ -36,7 +36,6 @@ public:
                 }
             }
 
-            // Check if a file was created or modified
             for (auto &file : std::filesystem::recursive_directory_iterator(path_to_watch)) {
                 auto current_file_last_write_time = std::filesystem::last_write_time(file);
 

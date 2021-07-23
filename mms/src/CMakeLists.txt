@@ -3,7 +3,7 @@ set(_lib_name mms_service)
 
 # A list of source code files
 set(_srcs
-        Activator.cpp
+        MmsActivator.cpp
         FileWatcher.h
 )
 
