@@ -1,0 +1,6 @@
+{
+  "bundle.symbolic_name" : "file_watcher_consumer_service",
+  "bundle.activator" : true,
+  "bundle.name" : "Example Consumer Service",
+  "bundle.description" : "This bundle calls the file watcher service to track changes on a filesystem."
+}

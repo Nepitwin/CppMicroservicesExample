@@ -63,7 +63,7 @@ int main(int /*argc*/, char ** /*argv*/) {
                       << std::setw(20) << "status"
                       << " Print status information\n"
                       << std::setw(20) << "load <path>"
-                      << " Load mms dll by full path\n"
+                      << " Load fileWatcherService dll by full path\n"
                       << std::setw(20) << "uninstall"
                       << " Uninstall a bundle with id <id> or name <name>\n"
                       << std::setw(20) << "shutdown"

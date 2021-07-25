@@ -1,6 +1,0 @@
-{
-  "bundle.symbolic_name" : "module_management_service",
-  "bundle.activator" : true,
-  "bundle.name" : "Module Management Service",
-  "bundle.description" : "This bundle manages the management of all modules."
-}

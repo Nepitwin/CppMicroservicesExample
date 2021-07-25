@@ -23,11 +23,12 @@ This project contains one driver executable to start, stop, uninstall the bundle
 
 | Module                          | Description                                     |
 | -------------                   | -------------                                   |
-| ClockService (clock)            | Simple clock management service by chrono       |
-| ClockConsumerService (consumer) | Consumer from the clock service                 |
+| ClockService                    | Simple clock management service by chrono       |
+| ClockConsumer                   | Consumer from the clock service                 |
 | Driver (driver)                 | Driver to control the CppFramework              |
 | Shared (shared)                 | Shared directory for all interfaces             |
-| ModuleManagementService (mms)   | Sample implementation from a [filewatcher](https://solarianprogrammer.com/2019/01/13/cpp-17-filesystem-write-file-watcher-monitor) in C++20/C++17 |
+| FileWatcherService              | Sample implementation from a [filewatcher](https://solarianprogrammer.com/2019/01/13/cpp-17-filesystem-write-file-watcher-monitor) in C++20/C++17 |
+| FileWatcherConsumer             | Consumer from the file wachter                  |
 
 ## Driver
 

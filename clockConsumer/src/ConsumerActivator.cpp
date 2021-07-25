@@ -11,7 +11,7 @@ class ConsumerActivator : public cppmicroservices::BundleActivator {
 public:
 
     void Start(cppmicroservices::BundleContext context) override {
-        std::cout << "Start consumer service" << '\n';
+        std::cout << "Start clockConsumer service" << '\n';
         ctx = context;
 
         consumer = std::jthread([this](std::stop_token stopToken) {
@@ -24,8 +24,7 @@ public:
     }
 
     void Stop(cppmicroservices::BundleContext context) override {
-        consumer.request_stop();
-        std::cout << "End consumer service" << std::endl;
+        std::cout << "End clockConsumer service" << std::endl;
     }
 
     static void PrintTime(const cppmicroservices::ServiceReference<IServiceTime>& ref)
@@ -49,7 +48,7 @@ public:
     }
 
 private:
-    std::jthread consumer;
+    [[maybe_unused]] std::jthread consumer;
 
     cppmicroservices::BundleContext ctx;
 };

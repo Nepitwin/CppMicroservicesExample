@@ -1,0 +1,6 @@
+{
+  "bundle.symbolic_name" : "file_watcher_service",
+  "bundle.activator" : true,
+  "bundle.name" : "File Watcher Service",
+  "bundle.description" : "This bundle manages multiple file watchers on a filesystem."
+}
